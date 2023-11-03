@@ -87,23 +87,33 @@ class ShopItem {
 class ShopCard extends StatelessWidget {
   final ShopItem item;
 
-  const ShopCard(this.item, {super.key}); // Constructor
+  const ShopCard(this.item, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    Color backgroundColor; // Menyimpan warna latar belakang
+
+    if (item.name == "Lihat Item") {
+      backgroundColor = Colors.blue; // Atur warna latar belakang untuk "Lihat Item"
+    } else if (item.name == "Tambah Item") {
+      backgroundColor = Colors.green; // Atur warna latar belakang untuk "Tambah Item"
+    } else if (item.name == "Logout") {
+      backgroundColor = Colors.red; // Atur warna latar belakang untuk "Logout"
+    } else {
+      backgroundColor = Colors.indigo; // Warna default jika tidak ada yang cocok
+    }
+
     return Material(
-      color: Colors.indigo,
+      color: backgroundColor, // Menggunakan warna latar belakang yang sesuai
       child: InkWell(
-        // Area responsive terhadap sentuhan
         onTap: () {
-          // Memunculkan SnackBar ketika diklik
           ScaffoldMessenger.of(context)
             ..hideCurrentSnackBar()
             ..showSnackBar(SnackBar(
-                content: Text("Kamu telah menekan tombol ${item.name}!")));
+              content: Text("Kamu telah menekan tombol ${item.name}!"),
+            ));
         },
         child: Container(
-          // Container untuk menyimpan Icon dan Text
           padding: const EdgeInsets.all(8),
           child: Center(
             child: Column(
