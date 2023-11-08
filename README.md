@@ -4,6 +4,54 @@ Kelas : PBP-F
 
 NPM   : 2206828033
 
+
+# TUGAS 8
+## Jelaskan perbedaan antara Navigator.push() dan Navigator.pushReplacement(), disertai dengan contoh mengenai penggunaan kedua metode tersebut yang tepat!
+`Navigator.push()` dan `Navigator.pushReplacement()` merupakan dua opsi navigasi yang tersedia dalam framework Flutter. Kedua metode ini digunakan untuk menambahkan rute tambahan ke dalam stack tampilan saat ini. Namun, perbedaan signifikan antara keduanya adalah sebagai berikut:
+1. Metode `Navigator.push()` digunakan dalam Flutter untuk menambahkan rute baru ke dalam stack rute saat ini dalam aplikasi. Ketika menggunakan `Navigator.push()`, rute baru ditambahkan di atas rute yang sedang ditampilkan. Sebagai hasilnya, halaman sebelumnya tetap ada dalam stack rute, dan pengguna dapat kembali ke halaman sebelumnya dengan menggunakan tombol kembali atau dengan perintah "pop" yang sesuai. Ini memungkinkan pengguna untuk menjelajahi riwayat navigasi aplikasi dan kembali ke langkah sebelumnya.
+   
+Contoh penggunaan Navigator.push():
+             
+    Navigator.push(context,
+        MaterialPageRoute(builder: (context) => const ShopFormPage()));
+
+2. Metode `Navigator.pushReplacement()` digunakan untuk menggantikan rute sebelumnya dengan rute baru dalam stack rute. Ketika Anda menggunakan Navigator.pushReplacement(), halaman sebelumnya dihapus dari stack rute, dan hanya rute baru yang ditampilkan. Oleh karena itu, pengguna tidak dapat kembali ke halaman sebelumnya menggunakan tombol kembali atau perintah "pop." Ini berguna ketika Anda ingin menggantikan konten halaman saat ini sepenuhnya dengan halaman baru, seperti ketika mencapai langkah terakhir dalam suatu alur aplikasi.
+
+Contoh penggunaan Navigator.pushReplacement():
+ 
+     Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(
+        builder: (context) => MyHomePage(),
+      ));
+
+Secara umum perbedaan dalam penggunaannya yakni jika ingin mempertahankan riwayat navigasi dan kemampuan pengguna untuk kembali ke halaman sebelumnya (Navigator.push()) atau jika ingin menggantikan halaman sebelumnya dengan halaman baru dan menghilangkan opsi pengguna untuk kembali ke halaman sebelumnya (Navigator.pushReplacement()).
+
+## Jelaskan masing-masing layout widget pada Flutter dan konteks penggunaannya masing-masing!
+Container: Container adalah widget tata letak serbaguna yang digunakan untuk mengelilingi widget lain dan mengatur properti-properti seperti padding, margin, warna latar belakang, dan batas (border). Ini sangat berguna untuk mengatur tampilan widget dalam kotak.
+
+Column: Column adalah widget tata letak vertikal yang mengatur anak-anaknya dalam satu kolom. Ini berguna ketika Anda ingin menumpuk widget secara vertikal, misalnya untuk membuat tampilan daftar.
+
+Row: Row adalah widget tata letak horizontal yang mengatur anak-anaknya dalam satu baris. Ini berguna untuk mengatur widget secara horizontal, seperti dalam pembuatan baris tombol atau ikon.
+
+ListView: ListView adalah widget yang menggulungkan daftar anaknya secara vertikal atau horizontal, tergantung pada jenis ListView yang Anda gunakan. Ini cocok untuk membuat daftar item yang dapat digulungkan, seperti daftar berita atau daftar kontak.
+
+Stack: Stack adalah widget yang memungkinkan Anda menempatkan anak-anaknya dalam lapisan (layer) yang tumpang tindih. Anda dapat mengatur posisi anak-anaknya dengan tepat dalam lapisan-lapisan ini, yang berguna untuk pembuatan tampilan yang kompleks, seperti tumpukan kartu atau tampilan overlay.
+
+Expanded: Expanded adalah widget yang digunakan di dalam Column atau Row untuk memberikan anak-anaknya ruang tambahan. Ini digunakan untuk mengatur bagaimana ruang yang tersedia dibagi di antara anak-anak dalam tata letak kolom atau baris.
+
+Card: Card adalah widget yang menggambarkan permukaan materi (material surface) yang terangkat dan berfungsi sebagai wadah untuk konten terkait. Ini sering digunakan untuk menampilkan informasi seperti kartu kontak atau entri berita dalam desain Material Design.
+
+GridView: GridView adalah widget yang digunakan untuk mengatur anak-anaknya dalam grid atau kotak-kotak berbaris. Anda dapat mengatur jumlah baris dan kolom, serta tata letak anak-anaknya.
+
+Wrap: Wrap adalah widget yang mengatur anak-anaknya dalam beberapa baris atau kolom dan, jika perlu, memindahkan widget ke baris atau kolom berikutnya jika ruang terbatas. Ini berguna ketika Anda ingin mengelola daftar item yang dapat berubah dalam jumlah dan ukuran.
+
+SingleChildScrollView: SingleChildScrollView adalah widget yang digunakan untuk membuat area bergulir yang hanya memiliki satu anak. Ini berguna untuk menggulungkan satu widget besar dalam satu arah (vertikal atau horizontal).
+
+## Sebutkan apa saja elemen input pada form yang kamu pakai pada tugas kali ini dan jelaskan mengapa kamu menggunakan elemen input tersebut!
+Column, 
+## Bagaimana penerapan clean architecture pada aplikasi Flutter?
+
 # TUGAS 7
 ## Apa perbedaan utama antara stateless dan stateful widget dalam konteks pengembangan aplikasi Flutter?
 Dalam pengembangan aplikasi Flutter, perbedaan utama antara Stateless Widget dan Stateful Widget terletak pada kemampuannya dalam mengelola dan merubah keadaan (state) tampilan. Stateless Widget adalah widget yang tidak dapat berubah atau tetap konstan sepanjang siklus hidup aplikasi. Ini cocok untuk tampilan statis yang tidak mengalami perubahan. Stateless widget tidak menyimpan informasi status(state) internal. Sebaliknya, Stateful Widget adalah widget yang dapat mengelola dan merubah keadaan selama siklus hidup aplikasi. Ini digunakan untuk tampilan yang memerlukan pembaruan, perubahan data, atau respons terhadap interaksi pengguna. Stateful Widget menggunakan objek state terpisah untuk menyimpan dan mengelola keadaan, sehingga mereka dapat memperbarui tampilan saat keadaan berubah. Sehingga, tampilan aplikasi akan selalu up to date dengan aksi atau data yang diberikan oleh user. Dapat ditarik kesimpulan bahwa, Stateless Widget digunakan untuk elemen tampilan yang tidak berubah dan Stateful Widget digunakan untuk elemen tampilan yang memerlukan dinamika dan perubahan.
