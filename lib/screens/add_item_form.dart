@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:circle_d/widgets/left_drawer.dart';
+import 'package:circle_d/screens/show_item.dart';
 
 class ShopFormPage extends StatefulWidget {
     const ShopFormPage({super.key});
@@ -11,7 +12,7 @@ class ShopFormPage extends StatefulWidget {
 class _ShopFormPageState extends State<ShopFormPage> {
     final _formKey = GlobalKey<FormState>();
     String _name = "";
-    int _price = 0;
+    int _amount = 0;
     String _description = "";
     @override
     Widget build(BuildContext context) {
@@ -67,7 +68,7 @@ class _ShopFormPageState extends State<ShopFormPage> {
                       ),
                       onChanged: (String? value) {
                         setState(() {
-                          _price = int.parse(value!);
+                          _amount = int.parse(value!);
                         });
                       },
                       validator: (String? value) {
@@ -114,6 +115,11 @@ class _ShopFormPageState extends State<ShopFormPage> {
                         ),
                         onPressed: () {
                           if (_formKey.currentState!.validate()) {
+                            ItemList.items.add(Item(
+                              name: _name,
+                              amount: _amount,
+                              description: _description,
+                            ));
                             showDialog(
                               context: context,
                               builder: (context) {
@@ -124,7 +130,7 @@ class _ShopFormPageState extends State<ShopFormPage> {
                                       crossAxisAlignment: CrossAxisAlignment.start,
                                       children: [
                                         Text('Nama: $_name'),
-                                        Text('Harga: $_price'),
+                                        Text('Harga: $_amount'),
                                         Text('Deskripsi: $_description'),
                                       ],
                                     ),

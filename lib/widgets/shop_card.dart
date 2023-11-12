@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:circle_d/widgets/left_drawer.dart';
-import 'package:circle_d/screens/shoplist_form.dart';
+import 'package:circle_d/screens/add_item_form.dart';
 import 'package:circle_d/screens/menu.dart';
+import 'package:circle_d/screens/show_item.dart';
 
 class ShopCard extends StatelessWidget {
   final ShopItem item;
@@ -24,6 +24,9 @@ class ShopCard extends StatelessWidget {
             if (item.name == "Tambah Item") {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => const ShopFormPage()));
+            } else if (item.name == "Lihat Item") {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const ItemList()));
           }
         },
         child: Container(
