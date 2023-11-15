@@ -3,6 +3,14 @@ import 'package:circle_d/screens/add_item_form.dart';
 import 'package:circle_d/screens/menu.dart';
 import 'package:circle_d/screens/show_item.dart';
 
+class ShopItem {
+  final String name;
+  final IconData icon;
+  final Color color;
+
+  ShopItem(this.name, this.icon, this.color);
+}
+
 class ShopCard extends StatelessWidget {
   final ShopItem item;
 
@@ -11,7 +19,7 @@ class ShopCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: Colors.indigo,
+      color: item.color,
       child: InkWell(
         // Area responsive terhadap sentuhan
         onTap: () {
@@ -27,7 +35,9 @@ class ShopCard extends StatelessWidget {
             } else if (item.name == "Lihat Item") {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => const ItemList()));
-          }
+            } else if (item.name == "Logout") {// Atur warna latar belakang untuk "Logout"
+            } 
+            
         },
         child: Container(
           // Container untuk menyimpan Icon dan Text

@@ -5,9 +5,9 @@ import 'package:circle_d/widgets/shop_card.dart';
 class MyHomePage extends StatelessWidget {
   MyHomePage({Key? key}) : super(key: key);
   final List<ShopItem> items = [
-    ShopItem("Lihat Item", Icons.checklist),
-    ShopItem("Tambah Item", Icons.add_shopping_cart),
-    ShopItem("Logout", Icons.logout),
+    ShopItem("Lihat Item", Icons.checklist, Colors.lightBlue),
+    ShopItem("Tambah Item", Icons.add_shopping_cart, Colors.lightGreen),
+    ShopItem("Logout", Icons.logout, Colors.red),
 ];
 
   // This widget is the home page of your application. It is stateful, meaning
@@ -79,12 +79,5 @@ class MyHomePage extends StatelessWidget {
     );
   }
   
-}
-
-class ShopItem {
-  final String name;
-  final IconData icon;
-
-  ShopItem(this.name, this.icon);
 }
 

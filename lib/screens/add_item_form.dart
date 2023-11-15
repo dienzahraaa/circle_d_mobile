@@ -13,6 +13,8 @@ class _ShopFormPageState extends State<ShopFormPage> {
     final _formKey = GlobalKey<FormState>();
     String _name = "";
     int _amount = 0;
+    int _price = 0;
+    String _category = "";
     String _description = "";
     @override
     Widget build(BuildContext context) {
@@ -56,12 +58,12 @@ class _ShopFormPageState extends State<ShopFormPage> {
                       },
                     ),
                   ),
-                  Padding(
+                  Padding( 
                     padding: const EdgeInsets.all(8.0),
                     child: TextFormField(
                       decoration: InputDecoration(
-                        hintText: "Harga",
-                        labelText: "Harga",
+                        hintText: "Jumlah",
+                        labelText: "Jumlah",
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(5.0),
                         ),
@@ -73,10 +75,59 @@ class _ShopFormPageState extends State<ShopFormPage> {
                       },
                       validator: (String? value) {
                         if (value == null || value.isEmpty) {
+                          return "Jumlah tidak boleh kosong!";
+                        }
+                        if (int.tryParse(value) == null) {
+                          return "Jumlah harus berupa angka!";
+                        }
+                        return null;
+                      },
+                    ),
+                  ),
+                  Padding( 
+                    padding: const EdgeInsets.all(8.0),
+                    child: TextFormField(
+                      decoration: InputDecoration(
+                        hintText: "Harga",
+                        labelText: "Harga",
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(5.0),
+                        ),
+                      ),
+                      onChanged: (String? value) {
+                        setState(() {
+                          _price = int.parse(value!);
+                        });
+                      },
+                      validator: (String? value) {
+                        if (value == null || value.isEmpty) {
                           return "Harga tidak boleh kosong!";
                         }
                         if (int.tryParse(value) == null) {
                           return "Harga harus berupa angka!";
+                        }
+                        return null;
+                      },
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: TextFormField(
+                      decoration: InputDecoration(
+                        hintText: "Kategori ",
+                        labelText: "Kategori",
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(5.0),
+                        ),
+                      ),
+                      onChanged: (String? value) {
+                        setState(() {
+                          _category = value!;
+                        });
+                      },
+                      validator: (String? value) {
+                        if (value == null || value.isEmpty) {
+                          return "Kategori tidak boleh kosong!";
                         }
                         return null;
                       },
@@ -118,6 +169,8 @@ class _ShopFormPageState extends State<ShopFormPage> {
                             ItemList.items.add(Item(
                               name: _name,
                               amount: _amount,
+                              price: _price,
+                              category: _category,
                               description: _description,
                             ));
                             showDialog(
@@ -130,7 +183,9 @@ class _ShopFormPageState extends State<ShopFormPage> {
                                       crossAxisAlignment: CrossAxisAlignment.start,
                                       children: [
                                         Text('Nama: $_name'),
-                                        Text('Harga: $_amount'),
+                                        Text('Jumlah: $_amount'),
+                                        Text('Harga: $_price'),
+                                        Text('Kategori: $_category'),
                                         Text('Deskripsi: $_description'),
                                       ],
                                     ),

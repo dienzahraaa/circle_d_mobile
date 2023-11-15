@@ -41,7 +41,7 @@ class ItemList extends StatelessWidget {
                       ),
                     ),
                     subtitle: Text(
-                        'Amount: ${items[index].amount}\nDescription: ${items[index].description}'),
+                        'Amount: ${items[index].amount}\nPrice: ${items[index].price}\nCategory: ${items[index].category}\nDescription: ${items[index].description}'),
                   ),
                 );
               },
@@ -56,11 +56,15 @@ class ItemList extends StatelessWidget {
 class Item {
   final String name;
   final int amount;
+  final int price;
+  final String category;
   final String description;
 
   Item({
     required this.name,
     required this.amount,
+    required this.price,
+    required this.category,
     required this.description,
   });
 }
