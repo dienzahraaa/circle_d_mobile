@@ -314,7 +314,8 @@ Pada` onTap` dari `ListTile` pertama, ditambahkan aksi untuk mengarahkan penggun
       },
 
 ## BONUS 
-![Alt text](image.png)
+![image](https://github.com/dienzahraaa/circle_d_mobile/assets/124993970/655a829f-7f79-4adc-9d18-3bb7b779ec26)
+
 
 # TUGAS 7
 ## Apa perbedaan utama antara stateless dan stateful widget dalam konteks pengembangan aplikasi Flutter?
