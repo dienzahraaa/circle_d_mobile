@@ -32,7 +32,7 @@ class _RegisterPageState extends State<RegisterPage> {
             gradient: LinearGradient(
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
-                colors: [Colors.blueGrey])),
+                colors: [Colors.white, Colors.white])),
         child: Form(
           key: _formKey,
           child: Stack(
