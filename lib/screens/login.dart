@@ -1,4 +1,5 @@
 import 'package:circle_d/screens/menu.dart';
+import 'package:circle_d/screens/register.dart';
 import 'package:flutter/material.dart';
 import 'package:pbp_django_auth/pbp_django_auth.dart';
 import 'package:provider/provider.dart';
@@ -69,7 +70,7 @@ class _LoginPageState extends State<LoginPage> {
                                 // TODO: Ganti URL dan jangan lupa tambahkan trailing slash (/) di akhir URL!
                                 // Untuk menyambungkan Android emulator dengan Django pada localhost,
                                 // gunakan URL http://10.0.2.2/
-                                final response = await request.login("http://127.0.0.1:8000/auth/login/", {
+                                final response = await request.login("http://127.0.0.1:800/auth/login/", {
                                 'username': username,
                                 'password': password,
                                 });
@@ -106,6 +107,17 @@ class _LoginPageState extends State<LoginPage> {
                             },
                             child: const Text('Login'),
                         ),
+                        const SizedBox(height: 12.0),
+                      TextButton(
+                        onPressed: () {
+                          // Navigate to the RegisterPage when the "Create New Account?" link is pressed
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => RegisterPage()),
+                          );
+                        },
+                        child: Text('Create New Account?'),
+                      ),
                     ],
                 ),
             ),

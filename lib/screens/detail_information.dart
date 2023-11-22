@@ -6,56 +6,35 @@ import 'package:circle_d/screens/show_item.dart';
 import 'package:circle_d/widgets/left_drawer.dart';
 import 'package:flutter/material.dart';
 
-class ProductDetailPage extends StatelessWidget {
-  final Product product;
 
-  const ProductDetailPage({Key? key, required this.product}) : super(key: key);
+
+class ProductDetailPage extends StatelessWidget {
+  final Product item;
+
+  ProductDetailPage({required this.item});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Product Detail'),
-      ),
+      appBar: AppBar(title: Text(item.fields.name)),
       body: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              product.fields.name,
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            SizedBox(height: 8),
-            Text(
-              'Category: ${product.fields.category}',
-              style: TextStyle(fontSize: 18),
-            ),
-            SizedBox(height: 8),
-            Text(
-              'Price: \$${product.fields.price}',
-              style: TextStyle(fontSize: 18),
-            ),
-            SizedBox(height: 8),
-            Text(
-              'Amount: ${product.fields.amount}',
-              style: TextStyle(fontSize: 18),
-            ),
+            Text('Name: ${item.fields.name}'),
+            Text('Amount: ${item.fields.amount}'),
+            Text('Price: ${item.fields.price}'),
+            Text('Category: ${item.fields.category}'),
+            Text('Description: ${item.fields.description}'),
+            // Add other attributes
             SizedBox(height: 16),
-            Text(
-              'Description:',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            SizedBox(height: 8),
-            Text(
-              product.fields.description,
-              style: TextStyle(fontSize: 18),
+            ElevatedButton(
+              onPressed: () {
+                // Navigate back to the item list screen
+                Navigator.pop(context);
+              },
+              child: Text('Back to Item List'),
             ),
           ],
         ),
