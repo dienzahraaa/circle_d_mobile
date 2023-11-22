@@ -31,6 +31,49 @@ Proses autentikasi dari input data akun pada aplikasi Flutter hingga tampilnya m
 
 
 ## Sebutkan seluruh widget yang kamu pakai pada tugas ini dan jelaskan fungsinya masing-masing.
+
+Scaffold: Menyediakan struktur dasar untuk sebuah halaman dengan AppBar, body, dan fungsi-fungsi dasar lainnya seperti Drawer atau BottomNavigationBar.
+
+Container: Mengizinkan pengaturan padding, margin, background, ukuran, dan berfungsi sebagai wadah untuk elemen-elemen lainnya dengan fleksibilitas.
+
+AppBar: Menampilkan judul aplikasi dan mengatur warna latar belakang serta teks di bagian atas sebuah halaman.
+
+ElevatedButton: Tombol dengan tampilan yang lebih tinggi yang dapat digunakan untuk memicu aksi tertentu.
+
+Form: Memungkinkan pengelompokan elemen-elemen input untuk validasi dan manipulasi data.
+
+TextFormField: Widget untuk mengambil input teks dari pengguna dalam sebuah form.
+
+Text: Menampilkan teks dalam aplikasi.
+
+Drawer: Menyediakan struktur untuk menu navigasi yang dapat diakses dengan menggeser dari sisi.
+
+Column: Menyusun widgets atau item secara vertikal.
+
+ListView: Menyusun widget-widget agar dapat di-scroll, berguna ketika menampilkan daftar item.
+
+ListTile: Menampilkan item dalam ListView dengan tampilan yang konsisten.
+
+Navigator: Bertanggung jawab atas perpindahan antar halaman dalam aplikasi.
+
+MaterialPageRoute: Mengatur transisi antara halaman-halaman dalam aplikasi Flutter.
+
+Material: Lapisan dasar yang memberikan efek elevasi dan respons terhadap sentuhan pada widget seperti InkWell.
+
+InkWell: Area responsif terhadap sentuhan pengguna dengan efek visual.
+
+Card: Mengelompokkan informasi dalam tampilan kartu dengan bayangan dan sudut yang lebih lembut.
+
+CircularProgressIndicator: Menampilkan indikator loading sementara ketika data produk diambil atau proses tertentu sedang berlangsung.
+
+SingleChildScrollView: Memungkinkan halaman untuk dapat di-scroll secara vertikal saat kontennya melebihi ukuran layar.
+
+GridView.count: Tata letak grid dengan jumlah kolom yang dapat diatur.
+
+Future: Representasi nilai atau kesalahan yang mungkin terjadi di masa depan.
+
+FutureBuilder: Mengelola state Future untuk menangani data asynchronous dan membangun tampilan berdasarkan status Future tersebut.
+
 ## Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step! (bukan hanya sekadar mengikuti tutorial).
 ### Memastikan deployment proyek tugas Django kamu telah berjalan dengan baik.
 ![image](https://github.com/dienzahraaa/circle_d_mobile/assets/124993970/f6c739a4-52d2-4a14-812b-170291a31283)
